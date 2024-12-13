@@ -1,0 +1,100 @@
+README
+
+Tom Zhou
+Zap
+10/20/24
+
+B. The purpose of the program.
+
+PURPOSE: 
+    Zap is a data compression algorithum comprised of an encoder and a decoder 
+    that utilizes huffman trees and binary to encode/decode strings. 
+
+HELP RECIEVED:
+    I have recieved help from a few TAs. 
+
+FILES:
+
+    Code Files: 
+    main.cpp: main functions that allows user to interact with HuffmanEncoders
+
+    MakeFile: Makefile that initates unit_test, phaseoOne, ZapUtil, main,
+    HuffmanTreeNode, and HuffmanTreeCoder
+
+    Unit_Test.h: unit testing files to test out different functionalities. 
+
+    phaseOne.h / phaseOne.cpp: header and implementations for phaseOne, which
+    includes 3 functions that were used and easily inserted inside of 
+    HuffmanCoder class and implementation
+
+    ZapUtil.h / ZapUtil.o: provided functions for Zap compiliing and tree
+    graphing for testing and implementation 
+
+    HuffmanTreeNode.h / HuffmanTreeNode.o: HuffmanTreeNode header and object
+    file that was used in HuffmanCoder to build tree and store values
+
+    HuffmanCoder.h / HuffmanCoder.cpp: The header and implementation of 
+    HuffmanCoder, that includes a encoder and decoder function. 
+
+    Testing Files: 
+    
+    sentene.txt / sentenceOut.zap / sentenceOut.txt: these three files are 
+    used to test functionality of the encoder and decoder with a short simple
+    sentence to know that it functions in that setting. 
+
+    singleChar.txt / singleChar.zap / singleCharOut.txt: these files are 
+    used to test functionality of the encoder and decoder with a single char
+
+    ecoli.coli / ecoli.zap / ecoliOut.txt: these files are used to 
+    test how the function deals with a massive amount of data. 
+
+    empty.txt / empty.zap / emptyOut.txt: these files are used to test the 
+    how the encoder and decoder reacts when the file is empty. 
+
+
+COMPILE AND RUN PROGRAM:
+
+    To compile, type "make" into console and all associated program 
+    will be linked and compiled. 
+
+    To run, type 
+        "./zap [zap/unzap] inputFileName outputFileName" 
+
+DATA STRUCTURE AND ALGORITHMS: 
+
+    A numbers of different data structures and algorithums, 
+
+    Encoding:
+    For counting frequencies, vectors and priority queues were used. 
+    I picked vectors to stores frequencies for the ease and speed of 
+    constant time access. An increasing priority queue was filled
+    in the count_frequency was used that was used later in the Huffman
+    Tree algorithum. I chose increasing priority queue because the
+    increasing order and automatic sorting priority queue provides makes creating huffmantree very simple. 
+
+    For building the HuffmanTree, the huffman tree algoritum was implmented inorder to create a tree for easy sorting and 
+    more efficient binary code conversion. 
+
+    For generating the binary code. Two vectors were implemented. 
+    I picked vectors for its easy and fast constant time access. 
+    I used one char array to keep track of the "index" or the char
+    that is being processed and passed in. I used another string array
+    that contains exclusively "0" and "1" to create an array of binary
+    codes. As I update both at the same time as I traverse through the HuffmanTree, the index of the two vector matches. 
+
+    I used vectors throughout the program over regular array for its 
+    dynamic size instead of sticking to an constant size. 
+
+    Decoding: 
+    The pair data structure was used to "uncompress" a zap file. 
+    The HuffmanTree is stored by assigning a root node. And by having access to that root node, I can have access to the whole tree. 
+
+TESTING: 
+    I did a bulk of testing throughout the coding process, the code a little, test a little mentality to ensure a fully functioning program. 
+
+    I used unit_test as a diff test to make sure my encoder and decoder are working perfectly handing files at different sizes: from empty files, one character, a sentence, to megabytes of words. I made sure each of them are handled properly according to the reference code as well as passing the diff test by comparing the original file with the post decoder file. The specific files used are listed above. 
+
+    I used the reference code to make sure my trees are properly built since that is reflected through the outputted byteSizes after succesful encoding. 
+
+
+HOURS: 10hrs
